@@ -5,7 +5,7 @@ import numpy as np
 import time
 
 # Dirección IP del servidor web de la ESP32 CAM
-url = 'http://172.20.10.6/stream'  # Reemplaza con la IP de tu ESP32 CAM
+url = 'http://172.20.10.6/stream' 
 
 
 def callback(x):

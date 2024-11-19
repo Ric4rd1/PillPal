@@ -39,11 +39,5 @@ class MQTTClient:
     def publish(self, topic, message):
         self.client.publish(topic, message)
 
-    def send_dosage_history(self):
-        ''' 
-        Aqui Envia el historial de dosis
-        
-        '''
-        self.client.publish("Py/routine", "HDOK")
 
 

@@ -1,4 +1,5 @@
-id,nombre,edad,sexo,historial_medico,numero_telefono,contactos,configuracion_pastillas,Historial de Dosis,Unnamed: 9
-1,Juan,80,hombre,Diabetes e hipertension,5544332211,Dr Carlos:7766554433,"Data frame generado con pa instrucción CP<Nombre> , <Freq>, <hora_inicial>, <días>,<notas>",Cuando se ejecuta el comando DP se guarda una en una lista cada que se dispensa pastillas guardando fecha y hora,
-2,Ricard,21,H,intolerancia a la lactosa,4421605010,12345,8#1:00#2#tomar despues de alimentos,,
-3,Ema,1235,21,H,ibuprofeno,12345645,8#1:00#2#tomar despues de alimentos,,
+id,nombre,correo,edad,sexo,historial_medico,contactos,configuracion_pastillas,Historial de Dosis,Passcode,numero_telefono
+1,Ricard,a01710071@tec.mx,21,H,intolerante a la lactosa,12345645,,,8766,
+2,Ema,a01710366@tec.mx,21,H,ibuprofeno,12345645,,,9426,
+3,Quezada,a01710024@tec.mx,21,H,atun,1235,,,3084,
+4,Jousue,jgonzalga@tec.mx,34,H,Nada,234,,,9220,

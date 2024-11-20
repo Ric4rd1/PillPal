@@ -19,7 +19,7 @@ class messageQueue:
             params = instruction[2:].split(',')
 
             print("Params: ",params)
-
+            # -------------- Paciente -----------------------
             if command == "NP":  # Nuevo perfil
                 print("Adding new patient profile")
                 mes = self.data.add_patient_profile(params)
@@ -29,10 +29,23 @@ class messageQueue:
                 self.mqttClient.publish("Py/confirm", mes)
             elif command == "QR":  # Generar QR
                 mes = self.data.generate_qr(params)
+                self.data.send_qr(params)
                 self.mqttClient.publish("Py/confirm", mes)
             elif command == "HD":  # Historial de dosis
                 #self.data.send_dosage_history()
                 pass
+
+            # ------------- Admin --------------------------
+            if command == "IP": #Regresar info del paciente
+                mes = self.data.get_pacient_info(params)
+                self.mqttClient.publish("Py/confirm", mes)
+            elif command == "OH": #Regresar historial de dosis
+                mes = self.data.get_pacient_dose_history(params)
+                self.mqttClient.publish("Py/confirm", mes)
+            elif command == "TH": #Regresar temperatura y humedad
+                self.mqttClient.publish("Py/routine", "TP" )
+                self.mqttClient.publish("Py/routine", "HP" )
+            
 
 datasito = DataFrame()
 datasito.test()

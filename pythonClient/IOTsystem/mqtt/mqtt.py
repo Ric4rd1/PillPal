@@ -28,7 +28,8 @@ class MQTTClient:
 
     def on_message(self, client, userdata, msg):
         print(f"Message received in {msg.topic}: {msg.payload.decode()}")
-        self.queue.put(msg.payload.decode())
+        if msg.topic == "Node/routine":
+            self.queue.put(msg.payload.decode())
 
     def start(self):
         self.client.loop_start()

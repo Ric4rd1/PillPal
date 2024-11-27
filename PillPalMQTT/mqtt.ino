@@ -24,6 +24,11 @@ bool isMoving = false;             // Flag for ongoing movement
 String instruction = "";
 int value = -1;
 
+int motorLeft;
+int motorRight;
+
+int valueAux;
+
 // Callback functions for MQTT messages
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Message recieved on topic: ");
@@ -40,7 +45,18 @@ void callback(char* topic, byte* payload, unsigned int length) {
     
 
     String instructionAux = message.substring(0,2);
-    int valueAux = message.substring(2).toInt();
+    valueAux = message.substring(2).toInt();
+    
+    if(instructionAux == "JS"){
+      int comaIndex = message.indexOf(',');
+        if (comaIndex != -1) {
+          motorLeft = message.substring(2, comaIndex).toInt(); // "123"
+          motorRight = message.substring(comaIndex + 1).toInt(); // "456"
+    
+        } else{
+          valueAux = message.substring(2).toInt();
+      }
+    }
 
     Serial.print("Instruction:#");
     Serial.print(instructionAux);
@@ -105,6 +121,10 @@ void loopMqtt() {
         instruction  = currentCommand.instructionCmd;
         value = currentCommand.valueCmd;
 
+        if(currentCommand.instructionCmd == "JS"){
+          setMotorSpeeds(motorLeft, motorRight);
+        }
+
         if (currentCommand.instructionCmd == "MF") {
             resetCounts();
             isMoving = true;  // Set moving flag
@@ -133,19 +153,6 @@ void loopMqtt() {
           String h = String(readHumid());
           h = h + " %";
           mqttClient.publish("ESP/confirm", h.c_str());
-        }
-
-        if (currentCommand.instructionCmd == "JS") {
-          int speeds = currentCommand.valueCmd; // Example: 123045
-
-          // Extract leftSpeed (first 3 digits)
-          int leftSpeed = speeds / 1000; // Integer division removes the last 3 digits
-
-          // Extract rightSpeed (last 3 digits)
-          int rightSpeed = speeds % 1000; // Modulo operator keeps the last 3 digits
-
-          // Set the motor speeds
-          setMotorSpeeds(leftSpeed, rightSpeed);
         }
         
 

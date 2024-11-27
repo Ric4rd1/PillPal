@@ -1,5 +1,4 @@
 
-
-IPADDRESS = "localhost"
+IPADDRESS = "192.168.216.82"
 PORT = 1883
 KEEPALIVE = 60

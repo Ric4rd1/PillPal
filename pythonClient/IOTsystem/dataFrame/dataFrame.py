@@ -2,6 +2,7 @@ import pandas as pd
 import random
 from IOTsystem.qr.qr import generateQRpassword
 from IOTsystem.qr.qr import sendQrcode
+from IOTsystem.qr.qr import sendAppointmentEmail
 
 class DataFrame:
     def __init__(self, csv_file = "pacientes.csv"):
@@ -69,7 +70,7 @@ class DataFrame:
             if not idx.empty:
                 self.data.at[idx[0], "configuracion_pastillas"] = f"{freq}#{hora_inicial}#{dias}#{notas}"
                 print(self.data.to_string())
-                #self.client.publish("Py/routine", "CPOK")
+                return "CPOK"
         except ValueError as ve:
             print(f'Error de Formato CP: {ve}')
             return f'CPErr {ve}'
@@ -102,6 +103,22 @@ class DataFrame:
 
         except ValueError as ve:
             print(f'Error de Formato QR: {ve}')
+            return f'CPErr {ve}'
+        
+    def request_appointment(self, params):
+        try:
+            name = params[0]
+            if not self.inDataFrame(name):
+                return f'NPErr Paciente {name} no existente en base de datos'
+            else:
+                idx = self.getIndex(name)
+                correo = self.data.at[idx[0], "correo"]
+                print(f'se quiere mandar al correo {correo} del siguente paciente, {name} para agendar una cita')
+                mes = sendAppointmentEmail(correo, name)
+                return mes
+            
+        except ValueError as ve:
+            print(f'Error de Formato MM: {ve}')
             return f'CPErr {ve}'
         
     def get_pacient_info(self, params):

@@ -83,6 +83,37 @@ def sendQrcode(email_reciever, name):
 
     return "QROK"
 
+def sendAppointmentEmail(email_reciever, name):
+    appointment_link = c.GOOGLE_CALENDAR_LINK
+    body = f"""
+        <html>
+        <body>
+            <p>Dear {name},</p>
+            <p>Your doctor has requested to schedule an appointment with you.</p>
+            <p>To choose a convenient date and time based on the doctor's availability, please visit the link below:</p>
+            <p><a href="{appointment_link}">Choose Your Appointment</a></p>
+            <p>If you have any questions or need further assistance, feel free to reach out to us at <a href="mailto:pillpal.service@gmail.com">pillpal.service@gmail.com</a>.</p>
+            <p>Thank you, and we look forward to assisting you!</p>
+            <p>Best regards,</p>
+            <p><b>The PillPal Team</b></p>
+        </body>
+        </html>
+    """
+
+    em = EmailMessage()
+    em['From'] = c.EMAIL_SENDER
+    em['To'] = email_reciever
+    em['Subject'] = "💊PILLPAL💊 - Schedule Your Appointment"
+    em.add_alternative(body, subtype='html')
+
+    context = ssl.create_default_context()
+
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp:
+        smtp.login(c.EMAIL_SENDER, c.EMAIL_PASSWORD)
+        smtp.sendmail(c.EMAIL_SENDER, email_reciever, em.as_string())
+
+    return "Appointment Email Sent"
+
 
 if __name__ == "__main__":
     sendQrcode("ric4rd11@gmail.com", "Ricard")

@@ -4,12 +4,13 @@ import paho.mqtt.client as mqtt
 # Mqtt client for handling incoming messages from Node/routine
 
 class MQTTClient:
-    def __init__(self, queue, 
+    def __init__(self, queue, queueConfirm, 
                  ipAddress = c.IPADDRESS, 
                  port = c.PORT, 
                  keepAlive = c.KEEPALIVE):
         
         self.queue = queue
+        self.queueConfirm = queueConfirm
         self.ipAddress = ipAddress
         self.port = port
         self.keepAlive = keepAlive
@@ -30,6 +31,8 @@ class MQTTClient:
         print(f"Message received in {msg.topic}: {msg.payload.decode()}")
         if msg.topic == "Node/routine":
             self.queue.put(msg.payload.decode())
+        elif msg.topic == "ESP/confirm":
+            self.queueConfirm.put(msg.payload.decode())
 
     def start(self):
         self.client.loop_start()

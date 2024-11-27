@@ -61,6 +61,7 @@ void reconnect() {
         if (mqttClient.connect("ESP32Client")) {
             Serial.println("Connected");
             mqttClient.subscribe("Py/routine");
+            mqttClient.subscribe("ESP/joy");
         } else {
             Serial.print("Failed, rc=");
             Serial.print(mqttClient.state());
@@ -132,6 +133,19 @@ void loopMqtt() {
           String h = String(readHumid());
           h = h + " %";
           mqttClient.publish("ESP/confirm", h.c_str());
+        }
+
+        if (currentCommand.instructionCmd == "JS") {
+          int speeds = currentCommand.valueCmd; // Example: 123045
+
+          // Extract leftSpeed (first 3 digits)
+          int leftSpeed = speeds / 1000; // Integer division removes the last 3 digits
+
+          // Extract rightSpeed (last 3 digits)
+          int rightSpeed = speeds % 1000; // Modulo operator keeps the last 3 digits
+
+          // Set the motor speeds
+          setMotorSpeeds(leftSpeed, rightSpeed);
         }
         
 

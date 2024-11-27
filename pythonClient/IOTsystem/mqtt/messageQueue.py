@@ -43,7 +43,7 @@ class messageQueue:
             elif command == "CP":  # Configuración de pastillas
                 mes  = self.data.configure_dispensing(params)
                 if mes == "CPOK":
-                    self.pillScheduler.add_configuration(params[0],params[1], params[2], params[3], params[4])   
+                    self.pillScheduler.add_configuration(self.data.data, params[0],params[1], params[2], params[3], params[4])   
                 self.mqttClient.publish("Py/confirm", mes)
             elif command == "QR":  # Generar QR
                 mes = self.data.generate_qr(params)

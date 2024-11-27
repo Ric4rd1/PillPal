@@ -52,7 +52,6 @@ class PillScheduler:
         self.qr_detected = False
         self.qr_event = threading.Event()
         self.mqtt_client = mqtt_client
-        self.data_frame = data_frame
         self.load_configurations(data_frame)
 
         # ESP camera
@@ -90,16 +89,16 @@ class PillScheduler:
         print("Loaded configurations ------>")
         print(self.pill_configs)
 
-    def add_configuration(self, name: str, freq: int, hora_inicial: str, dias: int, notas: str):
+    def add_configuration(self, data_frame: pd.DataFrame, name: str, freq: int, hora_inicial: str, dias: int, notas: str):
         """
         Agrega un nuevo objeto PillConfiguration a la lista de configuraciones.
         """
 
-        if name not in self.data_frame["nombre"].values:
+        if name not in data_frame["nombre"].values:
             print(f"Error: No se encontró el nombre '{name}' en la configuración.")
             return
         
-        passcode = self.data_frame.loc[self.data_frame["nombre"] == name, "Passcode"].values[0]
+        passcode = data_frame.loc[data_frame["nombre"] == name, "Passcode"].values[0]
     
         # Crear el objeto PillConfiguration
         pill = PillConfiguration(

@@ -27,8 +27,8 @@ The project is divided into three main components, each with specific responsibi
    - Handles measurement and actuation tasks, such as dispensing medications.  
 
 ## ⚙️ Technologies Used  
-- **Language**: Python, Arduino/C++  
-- **Protocols**: MQTT,   
+- **Language**: Python, Arduino/C++, Node-RED  
+- **Protocols**: MQTT   
 - **Hardware**: ESP32 and additional components for medication dispensing.  
 - **Libraries**:  
   - `paho-mqtt` for MQTT communication.  
@@ -38,5 +38,6 @@ The project is divided into three main components, each with specific responsibi
 
 ## 📚 Documentation and Videos 📺
 - https://docs.google.com/document/d/1DWNFqEQlA5sqqxtK2EukKmiPLDHDfDtE2Gj4O8byPWM/edit?usp=sharing
+- https://www.youtube.com/watch?v=jvrMeFmUSMQ&ab_channel=RicardCatal%C3%A1Garfias
 - https://drive.google.com/drive/folders/1LYD4aqn_plU88AiijxxfB8_hm82p3c0Y?usp=sharing
 

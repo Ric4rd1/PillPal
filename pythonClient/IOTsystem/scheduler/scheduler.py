@@ -30,7 +30,7 @@ class VirtualClock:
 
     def advance_time(self, params):
         try:
-            hours, minutes = params
+            hours, minutes = params[0].split(':')
             """Avanza el tiempo virtual manualmente."""
             self.start_time += timedelta(hours=int(hours), minutes=int(minutes))
             return "FTOK"
@@ -55,8 +55,8 @@ class PillScheduler:
         self.load_configurations(data_frame)
 
         # ESP camera
-        self.espCam = CamaraESP(0,qr_event=self.qr_event) # Using Webcam
-        #self.espCam = CamaraESP(qr_event=self.qr_event) # Using WEBSERVER
+        #self.espCam = CamaraESP(0,qr_event=self.qr_event) # Using Webcam
+        self.espCam = CamaraESP(qr_event=self.qr_event) # Using WEBSERVER
         self.espCam.start()
 
     def set_qr_detected(self):

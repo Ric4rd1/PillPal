@@ -1,2 +1,4 @@
 id,nombre,correo,edad,sexo,historial_medico,contactos,configuracion_pastillas,Historial de Dosis,Passcode,Unnamed: 10
 1,Ricard,a01710071@tec.mx,21,H,intolerante a la lactosa,12345645,,,8766,
+2,Cantoral,joseantonio.cantoral@tec.mx,42,Male,{None # polen},{Ricard E Catalá Garfias:5244216050},,,8713,
+3,Rich,a01710071@tec.mx,21,Male,{Fiebre # Lactosa y vitamina b},{:},8#17:00#3#Tomar con alimentos,,3061,

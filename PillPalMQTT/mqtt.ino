@@ -145,13 +145,13 @@ void loopMqtt() {
 
         if(currentCommand.instructionCmd == "TP"){
           String t = String(readTemp());
-          t = t + " °C";
+          t = "TP" + t;
           mqttClient.publish("ESP/confirm", t.c_str());
         }
 
         if(currentCommand.instructionCmd == "HP"){
           String h = String(readHumid());
-          h = h + " %";
+          h = "HP" + h;
           mqttClient.publish("ESP/confirm", h.c_str());
         }
         

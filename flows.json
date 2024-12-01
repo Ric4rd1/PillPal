@@ -1,0 +1,2755 @@
+[
+    {
+        "id": "21edf7a160915447",
+        "type": "tab",
+        "label": "PacientForm",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "be8b404ffdaac503",
+        "type": "tab",
+        "label": "Admin",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "60a39893a99afe9f",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "bf0361a695588243",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2ef965a8f0d044fd",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "bf0361a695588243",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c16f8ad950615bb7",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": false,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control",
+            "ui-form",
+            "ui-text-input",
+            "ui-number-input",
+            "ui-file-input",
+            "ui-button",
+            "ui-button-group",
+            "ui-markdown",
+            "ui-template",
+            "ui-gauge",
+            "ui-chart",
+            "ui-table",
+            "ui-text",
+            "ui-switch",
+            "ui-slider",
+            "ui-radio-group",
+            "ui-dropdown"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "931907c53d966fb3",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#000000",
+            "primary": "#0094ce",
+            "bgPage": "#f0f5f9",
+            "groupBg": "#ffffff",
+            "groupOutline": "#000000"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "9px",
+            "groupGap": "9px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "9px"
+        }
+    },
+    {
+        "id": "38afc335db8bc20a",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "106f120e7e7fbf00",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "a1ec5b71498110d9",
+        "type": "mqtt-broker",
+        "name": "VanGogh",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "d3258f50993961e0",
+        "type": "ui_group",
+        "name": "Tempreratura y Humedad",
+        "tab": "106f120e7e7fbf00",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "106f120e7e7fbf00",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "2e381b72b7971453",
+        "type": "ui-page",
+        "name": "My Data",
+        "ui": "c16f8ad950615bb7",
+        "path": "/page2",
+        "icon": "mdi-account",
+        "layout": "grid",
+        "theme": "931907c53d966fb3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "<i class=\"material-icons\">adb</i>",
+        "visible": false,
+        "disabled": false
+    },
+    {
+        "id": "728aa007e599a761",
+        "type": "ui-page",
+        "name": "Pacient Information",
+        "ui": "c16f8ad950615bb7",
+        "path": "/page3",
+        "icon": "mdi-account-edit-outline",
+        "layout": "tabs",
+        "theme": "931907c53d966fb3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "2c57db1c8c6e7f97",
+        "type": "ui-group",
+        "name": "Pacient Information Form",
+        "page": "728aa007e599a761",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "d21f2bc242e82330",
+        "type": "ui_group",
+        "name": "Patient Form",
+        "tab": "4feec546a64fcdbe",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4feec546a64fcdbe",
+        "type": "ui_tab",
+        "name": "Patient Dashboard",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "fc65f7cb11552aba",
+        "type": "ui-group",
+        "name": "Medication Form",
+        "page": "728aa007e599a761",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "false",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "39049ed0ebc66f82",
+        "type": "ui-page",
+        "name": "PillPal",
+        "ui": "c16f8ad950615bb7",
+        "path": "/page4",
+        "icon": "mdi-pill",
+        "layout": "tabs",
+        "theme": "931907c53d966fb3",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0c5f88a51a054714",
+        "type": "ui-group",
+        "name": "Get the QR Code",
+        "page": "728aa007e599a761",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0d92c765bfad87e6",
+        "type": "ui-theme",
+        "name": "Basic Blue Theme",
+        "colors": {
+            "surface": "#00235c",
+            "primary": "#00a8eb",
+            "bgPage": "#070123",
+            "groupBg": "#eaeaeb",
+            "groupOutline": "#0055ff"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px",
+            "density": "default"
+        }
+    },
+    {
+        "id": "e7ed0c07765b36d5",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    },
+    {
+        "id": "615aeb13d1ee2cb2",
+        "type": "ui-group",
+        "name": "Pacient Data",
+        "page": "2e381b72b7971453",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "b2ebe0ece290bcca",
+        "type": "ui-group",
+        "name": "About Pillpal",
+        "page": "39049ed0ebc66f82",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c0250a13b7144f76",
+        "type": "ui-group",
+        "name": "How to use PillPal",
+        "page": "39049ed0ebc66f82",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7d46ba97a0cccdce",
+        "type": "ui-page",
+        "name": "Administrador",
+        "ui": "c16f8ad950615bb7",
+        "path": "/page6",
+        "icon": "mdi-doctor",
+        "layout": "tabs",
+        "theme": "0d92c765bfad87e6",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "4a0aaf751f4f7184",
+        "type": "ui-group",
+        "name": "Pacient",
+        "page": "7d46ba97a0cccdce",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Environment",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f487477be3dae311",
+        "type": "ui-group",
+        "name": "Appointment",
+        "page": "7d46ba97a0cccdce",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7a5fda47faaecfd5",
+        "type": "ui-group",
+        "name": "PillPal Status",
+        "page": "7d46ba97a0cccdce",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "2918a99396b1a695",
+        "type": "ui-group",
+        "name": "Time",
+        "page": "7d46ba97a0cccdce",
+        "width": "6",
+        "height": "1",
+        "order": 5,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ui-group",
+        "type": "ui_group",
+        "name": "Patient Info",
+        "tab": "ui-tab",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ui-tab",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1dca561c13b935b7",
+        "type": "ui-group",
+        "name": "Dosage",
+        "page": "7d46ba97a0cccdce",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "13775e3876747433",
+        "type": "function",
+        "z": "21edf7a160915447",
+        "name": "Format and Store Data",
+        "func": "let patient = {\n    name: msg.payload.name,\n    age: msg.payload.age,\n    genre: msg.payload.genre,\n    phone: msg.payload.phone,\n    health_issue: msg.payload.health_issue,\n    medications: Array.isArray(msg.payload.medications) ? msg.payload.medications : msg.payload.medications.split(', '),\n    allergies: msg.payload.allergies,\n    emergency_contact: {\n        name: msg.payload.emergency_name,\n        phone: msg.payload.emergency_phone,\n        relationship: msg.payload.relationship\n    }\n};\nmsg.payload = patient;\nflow.set(\"patient_data\", patient);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "ab0c5023505e4bdb"
+            ]
+        ]
+    },
+    {
+        "id": "ab0c5023505e4bdb",
+        "type": "ui-template",
+        "z": "21edf7a160915447",
+        "group": "615aeb13d1ee2cb2",
+        "page": "",
+        "ui": "",
+        "name": "Display Patient Data",
+        "order": 2,
+        "width": "",
+        "height": "",
+        "format": "<template>\n    <div>\n        <h3>User Information</h3>\n        <p >\n            Name: {{ msg.payload.name }}\n        </p>\n        <p>Age: {{ msg.payload.age }}</p>\n        <p>Phone: {{ msg.payload.phone }}</p>\n        <p>Genre: {{msg.payload.genre}} </p>\n        <h3>Medical Information</h3>\n        <p>Health Issue: {{ msg.payload.health_issue }}</p>\n        <p>Medications: {{ msg.payload.medications.join(', ') }}</p>\n        <p>Allergies: {{ msg.payload.allergies }}</p>\n\n        <h3>Emergency Contact</h3>\n        <p>Name: {{ msg.payload.emergency_contact.name }}</p>\n        <p>Phone: {{ msg.payload.emergency_contact.phone }}</p>\n        <p>Relationship: {{ msg.payload.emergency_contact.relationship }}</p>\n        \n        <b v-if=\"msg.payload.emergency_contact.relationship === 'Parent'\">Primary Contact</b>\n    </div>\n</template>\n\n<style>\n    p {\n        font-size: 16px;\n    }\n</style>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 860,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "261418520a4c46d4",
+        "type": "ui-form",
+        "z": "21edf7a160915447",
+        "name": "Pacient Information Form",
+        "group": "2c57db1c8c6e7f97",
+        "label": "",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Genre",
+                "key": "genre",
+                "type": "dropdown",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Age",
+                "key": "age",
+                "type": "number",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Health Issue",
+                "key": "health_issue",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Medications",
+                "key": "medications",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Email",
+                "key": "email",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Allergies",
+                "key": "allergies",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Emergency Contact Name",
+                "key": "emergency_name",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Relationship",
+                "key": "relationship",
+                "type": "text",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Emergency Contact Phone",
+                "key": "emergency_phone",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "genre": "",
+            "age": "",
+            "health_issue": "",
+            "medications": "",
+            "email": "",
+            "allergies": "",
+            "emergency_name": "",
+            "relationship": "",
+            "emergency_phone": ""
+        },
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "",
+        "topicType": "str",
+        "splitLayout": true,
+        "className": "",
+        "dropdownOptions": [
+            {
+                "dropdown": "genre",
+                "value": "Female",
+                "label": "female"
+            },
+            {
+                "dropdown": "genre",
+                "value": "Male",
+                "label": "male"
+            }
+        ],
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "13775e3876747433",
+                "5bd5c3ed0b0f57a3"
+            ]
+        ]
+    },
+    {
+        "id": "2004a178be18e615",
+        "type": "ui-form",
+        "z": "21edf7a160915447",
+        "name": "Form",
+        "group": "fc65f7cb11552aba",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Dosage interval (in hours)",
+                "key": "d_hours",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Initial Hour",
+                "key": "s_time",
+                "type": "time",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Dosage days",
+                "key": "d_days",
+                "type": "number",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Notes",
+                "key": "notes",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": "",
+            "d_hours": "",
+            "s_time": "",
+            "d_days": "",
+            "notes": ""
+        },
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "str",
+        "splitLayout": true,
+        "className": "",
+        "dropdownOptions": [
+            {
+                "dropdown": "",
+                "value": "0",
+                "label": "1"
+            },
+            {
+                "dropdown": "",
+                "value": "1",
+                "label": "2"
+            }
+        ],
+        "x": 270,
+        "y": 480,
+        "wires": [
+            [
+                "5ff8632b62c576e7",
+                "96eb4d6162a9f90b"
+            ]
+        ]
+    },
+    {
+        "id": "5ff8632b62c576e7",
+        "type": "function",
+        "z": "21edf7a160915447",
+        "name": "Format Patient Data",
+        "func": "let patientData = {\n    medications: msg.payload.medications,\n    dosesHours: msg.payload.d_hours,\n    startDay: msg.payload.s_day,\n    endDay: msg.payload.e_day\n};\n\n// Convert to JSON\nmsg.payload = patientData;\n\nreturn msg;",
+        "outputs": 1,
+        "x": 560,
+        "y": 440,
+        "wires": [
+            [
+                "f8614fdd2cfca8d9",
+                "973cfc5494cedfde"
+            ]
+        ]
+    },
+    {
+        "id": "f8614fdd2cfca8d9",
+        "type": "file",
+        "z": "21edf7a160915447",
+        "name": "Save to File",
+        "filename": "/path/to/patient_data.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 830,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "973cfc5494cedfde",
+        "type": "ui-template",
+        "z": "21edf7a160915447",
+        "group": "615aeb13d1ee2cb2",
+        "page": "",
+        "ui": "",
+        "name": "Display Patient Data",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "format": "<div>\n    <h3>Patient Data</h3>\n    <p>Medications: {{msg.payload.medications}}</p>\n    <p>Doses Hours: {{msg.payload.dosesHours}}</p>\n</div>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 860,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bd5c3ed0b0f57a3",
+        "type": "function",
+        "z": "21edf7a160915447",
+        "name": "NP - New Patient",
+        "func": "let NP = `NP${msg.payload.name},${msg.payload.email},${msg.payload.age},${msg.payload.genre},{${msg.payload.health_issue} # ${msg.payload.allergies}},{${msg.payload.emergency_name}:${msg.payload.emergency_phone}}`;\nmsg.payload = NP\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "8c0cac19d47bc185"
+            ]
+        ]
+    },
+    {
+        "id": "96eb4d6162a9f90b",
+        "type": "function",
+        "z": "21edf7a160915447",
+        "name": "CP - Configure Pill Schedule",
+        "func": "let output = `CP${msg.payload.name},${msg.payload.d_hours},${msg.payload.s_time},${msg.payload.d_days},${msg.payload.notes}`;\nmsg.payload = output;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 540,
+        "wires": [
+            [
+                "3dc78e9e894ae6de"
+            ]
+        ]
+    },
+    {
+        "id": "27af68c285d2534f",
+        "type": "function",
+        "z": "21edf7a160915447",
+        "name": "QR - Generate Security QR",
+        "func": "let output = `QR${msg.payload.name}`;\nmsg.payload = output;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 660,
+        "wires": [
+            [
+                "21cfd9eac1f5a9ca"
+            ]
+        ]
+    },
+    {
+        "id": "21cfd9eac1f5a9ca",
+        "type": "mqtt out",
+        "z": "21edf7a160915447",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 850,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "3dc78e9e894ae6de",
+        "type": "mqtt out",
+        "z": "21edf7a160915447",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 930,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "8c0cac19d47bc185",
+        "type": "mqtt out",
+        "z": "21edf7a160915447",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 830,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "85ec0fa9b0785d30",
+        "type": "ui-form",
+        "z": "21edf7a160915447",
+        "name": "GetQR",
+        "group": "0c5f88a51a054714",
+        "label": "GetQR",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 240,
+        "y": 680,
+        "wires": [
+            [
+                "27af68c285d2534f"
+            ]
+        ]
+    },
+    {
+        "id": "533edd34b9d51d91",
+        "type": "ui-markdown",
+        "z": "21edf7a160915447",
+        "group": "c0250a13b7144f76",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "# User Guide for the PillPal Interface\n\n## Overview\nThe PillPal interface is designed to manage medication schedules, patient information, and device configurations efficiently. This guide explains how to use each component of the interface to ensure a smooth experience.\n\n---\n\n## Interface Sections\n\n### 1. *Patient Information*\n- *Purpose:* Collect and display detailed patient data.\n- *Steps:*\n  1. Navigate to the *Patient Form* section.\n  2. Fill in the form fields:\n     - Patient Name\n     - Age\n     - Gender\n     - Health Issue\n     - Medications (comma-separated values)\n     - Allergies\n     - Emergency Contact (Name, Phone, Relationship)\n  3. Click *Submit* to save the information.\n  4. The details will appear in the *Patient Dashboard* for review.\n\n### 2. *Medication Schedule Configuration*\n- *Purpose:* Set up automated schedules for dispensing medication.\n- *Steps:*\n  1. Go to the *Medication Form*.\n  2. Input the required data:\n     - Dosage Interval (in hours)\n     - Initial Hour\n     - Dosage Days\n     - Notes (optional)\n  3. Click *Submit* to save the schedule.\n  4. The configuration will be sent to the device.\n\n### 3. *Generate Security QR Code*\n- *Purpose:* Create a QR code for secure patient identification.\n- *Steps:*\n  1. Open the *QR Code Generator* section.\n  2. Enter the patient’s name.\n  3. Click *Submit* to generate the QR code.\n  4. Scan the QR code to confirm the security setup.\n\n### 4. *Device Status Monitoring*\n- *Purpose:* View the status of the PillPal device.\n- *Steps:*\n  1. Navigate to the *Device Status* section.\n  2. Check the live updates for:\n     - Temperature\n     - Humidity\n     - Device health metrics\n\n### 5. *Temperature and Humidity Monitoring*\n- *Purpose:* Track the environment conditions of the storage area.\n- *Steps:*\n  1. Click on *Get Temperature and Humidity* in the dashboard.\n  2. The real-time data will display in gauges on the dashboard.\n\n",
+        "className": "",
+        "x": 550,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4a523c9b625d8cd",
+        "type": "ui-markdown",
+        "z": "21edf7a160915447",
+        "group": "b2ebe0ece290bcca",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "content": "\n## Overview\nThe PillPal interface is designed to manage medication schedules, patient information, and device configurations efficiently. This guide explains how to use each component of the interface to ensure a smooth experience.\n\nA significant percentage of people regularly forget to take their medications:\n- *22% of women*.\n- *25% of men*.\n- *13% of individuals* (both sexes) do not follow a fixed schedule for medication.\n- *25% of men* stop treatment when feeling better, ignoring the need for continued medication for chronic illnesses.\n- *Incorrect administration of medications*.\n- *Suspension of treatment* without considering the consequences.\n- Up to *50% of patients* do not take their medications as prescribed, according to the WHO.",
+        "className": "",
+        "x": 550,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6dc45d5681f385d1",
+        "type": "mqtt in",
+        "z": "be8b404ffdaac503",
+        "name": "py/confirm",
+        "topic": "Py/confirm",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a1ec5b71498110d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "34601778d6d466d0"
+            ]
+        ]
+    },
+    {
+        "id": "34601778d6d466d0",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "NP - New Patient",
+        "func": "msg.payload = {\n    name: msg.payload.name || \"Unknown\",\n    age: msg.payload.age || \"N/A\",\n    phone: msg.payload.phone || \"N/A\",\n    genre: msg.payload.genre || \"N/A\",\n    health_issue: msg.payload.health_issue || \"None\",\n    medications: msg.payload.medications || [],\n    allergies: msg.payload.allergies || \"None\",\n    emergency_contact: {\n        name: msg.payload.emergency_name || \"N/A\",\n        phone: msg.payload.emergency_phone || \"N/A\",\n        relationship: msg.payload.emergency_relationship || \"N/A\"\n    }\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b63ea46342315055",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "26d229c11ee9aa01",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "IP -  Patient",
+        "func": "let IP = `IP${msg.payload.name}`;\nmsg.payload = IP\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "b63ea46342315055"
+            ]
+        ]
+    },
+    {
+        "id": "09092de1b7e8f371",
+        "type": "ui-form",
+        "z": "be8b404ffdaac503",
+        "name": "Pacient Name",
+        "group": "4a0aaf751f4f7184",
+        "label": "Get the Pacient Infomation",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "26d229c11ee9aa01"
+            ]
+        ]
+    },
+    {
+        "id": "d09d0d9cd406f4af",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "OH -  Patient",
+        "func": "let IP = `OH${msg.payload.name}`;\nmsg.payload = IP\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 280,
+        "wires": [
+            [
+                "32899fba8b9b61e5"
+            ]
+        ]
+    },
+    {
+        "id": "fb8fbdc8501b602e",
+        "type": "ui-gauge",
+        "z": "be8b404ffdaac503",
+        "name": "Humedad",
+        "group": "7a5fda47faaecfd5",
+        "order": 3,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Humidity",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#a8f5ff"
+            },
+            {
+                "from": "30",
+                "color": "#55dbec"
+            },
+            {
+                "from": "60",
+                "color": "#53b4fd"
+            },
+            {
+                "from": "80",
+                "color": "#2397d1"
+            },
+            {
+                "from": "100",
+                "color": "#310792"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 720,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "7e56e8a16741b0cb",
+        "type": "mqtt in",
+        "z": "be8b404ffdaac503",
+        "name": "py/confirm",
+        "topic": "THtemperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a1ec5b71498110d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "4a051b8c5c97fa12"
+            ]
+        ]
+    },
+    {
+        "id": "7f1e78d978d4947c",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "TH",
+        "func": "let TH = `TH`;\nmsg.payload = TH\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "69201aad3d010d66"
+            ]
+        ]
+    },
+    {
+        "id": "5e04e8a46f77aad8",
+        "type": "ui-button",
+        "z": "be8b404ffdaac503",
+        "group": "7a5fda47faaecfd5",
+        "name": "TH",
+        "label": "Get Temperature and Humidity",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "7f1e78d978d4947c"
+            ]
+        ]
+    },
+    {
+        "id": "69201aad3d010d66",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 670,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4a051b8c5c97fa12",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "OH -  Patient",
+        "func": "let TH = 'TH<temperatura>C,<humedad>%';\nmsg.payload = TH\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72fbe93a72422257",
+        "type": "ui-gauge",
+        "z": "be8b404ffdaac503",
+        "name": "Temperatura",
+        "group": "7a5fda47faaecfd5",
+        "order": 4,
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "units": "temperature",
+        "icon": "",
+        "prefix": "",
+        "suffix": "°C",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#000000"
+            },
+            {
+                "from": "10",
+                "color": "#00db37"
+            },
+            {
+                "from": "20",
+                "color": "#3cc83c"
+            },
+            {
+                "from": "25",
+                "color": "#c2f604"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800"
+            },
+            {
+                "from": "40",
+                "color": "#e66f00"
+            },
+            {
+                "from": "50",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 970,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "b64a3730fa08bebc",
+        "type": "ui-form",
+        "z": "be8b404ffdaac503",
+        "name": "Appointment",
+        "group": "f487477be3dae311",
+        "label": "Send request to schedule appointment",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 190,
+        "y": 640,
+        "wires": [
+            [
+                "24b45f3105bf12ba"
+            ]
+        ]
+    },
+    {
+        "id": "24b45f3105bf12ba",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "TH - New Patient",
+        "func": "let MM = `MM${msg.payload.name}`;\nmsg.payload = MM\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 640,
+        "wires": [
+            [
+                "e711aec9db63646f"
+            ]
+        ]
+    },
+    {
+        "id": "e711aec9db63646f",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 650,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "a87b8fb00de0e7b9",
+        "type": "ui-form",
+        "z": "be8b404ffdaac503",
+        "name": "Fordward Time",
+        "group": "2918a99396b1a695",
+        "label": "Fordward Time",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Fordward Time",
+                "key": "time",
+                "type": "time",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "time": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 200,
+        "y": 700,
+        "wires": [
+            [
+                "23432aab09d262a3"
+            ]
+        ]
+    },
+    {
+        "id": "23432aab09d262a3",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "Fordward Time - FT",
+        "func": "let FT = `FT${msg.payload.time}`;\nmsg.payload = FT\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 700,
+        "wires": [
+            [
+                "ac485840d1dfe334"
+            ]
+        ]
+    },
+    {
+        "id": "ac485840d1dfe334",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 650,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "c4c3e0df24b8aba5",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "GT",
+        "func": "let GT = `GT`;\nmsg.payload = GT\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 420,
+        "wires": [
+            [
+                "b51f6ccfbe9029fb"
+            ]
+        ]
+    },
+    {
+        "id": "85de3ef28fe32aa9",
+        "type": "ui-button",
+        "z": "be8b404ffdaac503",
+        "group": "2918a99396b1a695",
+        "name": "GT",
+        "label": "Get Time",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "mdi-sun-thermometer",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 420,
+        "wires": [
+            [
+                "c4c3e0df24b8aba5"
+            ]
+        ]
+    },
+    {
+        "id": "b51f6ccfbe9029fb",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 670,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b0f82b51a1553d0b",
+        "type": "mqtt in",
+        "z": "be8b404ffdaac503",
+        "name": "py/confirm",
+        "topic": "Py/confirm",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a1ec5b71498110d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1040,
+        "y": 740,
+        "wires": [
+            [
+                "fe1ea3c3fd966155"
+            ]
+        ]
+    },
+    {
+        "id": "fe1ea3c3fd966155",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": "100",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1230,
+        "y": 780,
+        "wires": [
+            [
+                "66d59f8bd27cb826"
+            ]
+        ]
+    },
+    {
+        "id": "66d59f8bd27cb826",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 1370,
+        "y": 820,
+        "wires": [
+            [
+                "2f3e9408acd9034c"
+            ],
+            [
+                "b343f25d8e075039"
+            ],
+            [
+                "4d398073e2ea109f"
+            ],
+            [
+                "33b28454dff58177"
+            ],
+            [
+                "7b13546acd304f83"
+            ],
+            [
+                "da484a00ce48ef86"
+            ]
+        ]
+    },
+    {
+        "id": "0755a2711f20d450",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Name:",
+        "label": "Name:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1810,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "b343f25d8e075039",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "Email: ",
+        "label": "Email",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1570,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "4d398073e2ea109f",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Age: ",
+        "label": "Age:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1570,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "33b28454dff58177",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "Gender: ",
+        "label": "Gender:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1580,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "2f3e9408acd9034c",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "P",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1570,
+        "y": 700,
+        "wires": [
+            [
+                "b5958d196bf7a122"
+            ]
+        ]
+    },
+    {
+        "id": "b5958d196bf7a122",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1690,
+        "y": 700,
+        "wires": [
+            [
+                "0755a2711f20d450"
+            ]
+        ]
+    },
+    {
+        "id": "c70895f6f6ee9c9f",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "health issues",
+        "label": "Allergies:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 2390,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "7b13546acd304f83",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "{",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1570,
+        "y": 880,
+        "wires": [
+            [
+                "df2780e00a9a0431"
+            ]
+        ]
+    },
+    {
+        "id": "df2780e00a9a0431",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1750,
+        "y": 880,
+        "wires": [
+            [
+                "439f01bee0e0d82b"
+            ]
+        ]
+    },
+    {
+        "id": "439f01bee0e0d82b",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "#",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1870,
+        "y": 880,
+        "wires": [
+            [
+                "65f84a6bc3c5f7a3"
+            ]
+        ]
+    },
+    {
+        "id": "65f84a6bc3c5f7a3",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2010,
+        "y": 880,
+        "wires": [
+            [
+                "c53ff020080c10ea"
+            ],
+            [
+                "2fe3f5b983ce8bb5"
+            ]
+        ]
+    },
+    {
+        "id": "6f2f5bfa86346833",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "health issues",
+        "label": "Health issues:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 2390,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "d7ba8c4cd97adcdb",
+        "type": "mqtt in",
+        "z": "be8b404ffdaac503",
+        "name": "py/confirm",
+        "topic": "Py/confirm",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a1ec5b71498110d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1020,
+        "y": 1080,
+        "wires": [
+            [
+                "37cb1d3d5f3d3731"
+            ]
+        ]
+    },
+    {
+        "id": "37cb1d3d5f3d3731",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "#",
+        "spltType": "str",
+        "arraySplt": "100",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1190,
+        "y": 1080,
+        "wires": [
+            [
+                "6a63f26cda6f1d51"
+            ]
+        ]
+    },
+    {
+        "id": "6a63f26cda6f1d51",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 1330,
+        "y": 1140,
+        "wires": [
+            [
+                "2e5631d7beed42ce"
+            ],
+            [
+                "78701021e26c9427"
+            ],
+            [
+                "0ea0203c43c34716"
+            ],
+            [
+                "023c8cd961f86ad8"
+            ]
+        ]
+    },
+    {
+        "id": "78701021e26c9427",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "1dca561c13b935b7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "hour",
+        "label": "Initial Hour:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1490,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "0ea0203c43c34716",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "1dca561c13b935b7",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "days",
+        "label": "Dosage days:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1490,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "023c8cd961f86ad8",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "1dca561c13b935b7",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "notes",
+        "label": "Notes:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1490,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "481f41299a5d9f24",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "1dca561c13b935b7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Dossage interval (in hours):",
+        "label": "Dossage interval (in hours):",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 1780,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "2e5631d7beed42ce",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "H",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1450,
+        "y": 1020,
+        "wires": [
+            [
+                "c5d41bc63cd29b66"
+            ]
+        ]
+    },
+    {
+        "id": "c5d41bc63cd29b66",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1590,
+        "y": 1020,
+        "wires": [
+            [
+                "481f41299a5d9f24"
+            ]
+        ]
+    },
+    {
+        "id": "ec6b7e52a6a8eeed",
+        "type": "ui-form",
+        "z": "be8b404ffdaac503",
+        "name": "Pacient Name",
+        "group": "1dca561c13b935b7",
+        "label": "Pacient Dosage ",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pacient Name",
+                "key": "name",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "name": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 220,
+        "y": 280,
+        "wires": [
+            [
+                "d09d0d9cd406f4af"
+            ]
+        ]
+    },
+    {
+        "id": "32899fba8b9b61e5",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "node/routine",
+        "topic": "Node/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f8359cd0466e0c92",
+        "type": "mqtt in",
+        "z": "be8b404ffdaac503",
+        "name": "py/confirm",
+        "topic": "Py/confirm",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a1ec5b71498110d9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 880,
+        "wires": [
+            [
+                "7bd600c02a2fdea6"
+            ]
+        ]
+    },
+    {
+        "id": "7bd600c02a2fdea6",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": "100",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 430,
+        "y": 880,
+        "wires": [
+            [
+                "d056e5e4bc07b863"
+            ]
+        ]
+    },
+    {
+        "id": "d056e5e4bc07b863",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 920,
+        "wires": [
+            [
+                "d1c091f9b7c67e6a"
+            ],
+            [
+                "fb8fbdc8501b602e"
+            ]
+        ]
+    },
+    {
+        "id": "d1c091f9b7c67e6a",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "H",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 710,
+        "y": 880,
+        "wires": [
+            [
+                "c114c2dabf214690"
+            ]
+        ]
+    },
+    {
+        "id": "c114c2dabf214690",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 880,
+        "wires": [
+            [
+                "72fbe93a72422257"
+            ]
+        ]
+    },
+    {
+        "id": "c53ff020080c10ea",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "{",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 2130,
+        "y": 860,
+        "wires": [
+            [
+                "9af9ca57ecf06974"
+            ]
+        ]
+    },
+    {
+        "id": "9af9ca57ecf06974",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2250,
+        "y": 860,
+        "wires": [
+            [
+                "6f2f5bfa86346833"
+            ]
+        ]
+    },
+    {
+        "id": "2fe3f5b983ce8bb5",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "{",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 2130,
+        "y": 900,
+        "wires": [
+            [
+                "f6c7036779e3185d"
+            ]
+        ]
+    },
+    {
+        "id": "f6c7036779e3185d",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2250,
+        "y": 900,
+        "wires": [
+            [
+                "c70895f6f6ee9c9f"
+            ]
+        ]
+    },
+    {
+        "id": "6ceee5bed45a0b7e",
+        "type": "ui-text",
+        "z": "be8b404ffdaac503",
+        "group": "4a0aaf751f4f7184",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "Emergency Contacts",
+        "label": "Emergency Contacts",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "className": "",
+        "x": 2180,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "aca3b49ee4074dbd",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1750,
+        "y": 940,
+        "wires": [
+            [
+                "e5199e463654c83c"
+            ]
+        ]
+    },
+    {
+        "id": "da484a00ce48ef86",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "{",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1570,
+        "y": 940,
+        "wires": [
+            [
+                "aca3b49ee4074dbd"
+            ]
+        ]
+    },
+    {
+        "id": "4715e5ef3506b576",
+        "type": "switch",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "property": "parts.index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2010,
+        "y": 940,
+        "wires": [
+            [
+                "6ceee5bed45a0b7e"
+            ]
+        ]
+    },
+    {
+        "id": "e5199e463654c83c",
+        "type": "split",
+        "z": "be8b404ffdaac503",
+        "name": "",
+        "splt": "{",
+        "spltType": "str",
+        "arraySplt": "10",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1870,
+        "y": 940,
+        "wires": [
+            [
+                "4715e5ef3506b576"
+            ]
+        ]
+    },
+    {
+        "id": "dd56e0c96242cc33",
+        "type": "function",
+        "z": "be8b404ffdaac503",
+        "name": "GT",
+        "func": "let RP = `RP`;\nmsg.payload = RP\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 460,
+        "wires": [
+            [
+                "7e277dcfe72e3b67"
+            ]
+        ]
+    },
+    {
+        "id": "39f493eb990ab348",
+        "type": "ui-button",
+        "z": "be8b404ffdaac503",
+        "group": "7a5fda47faaecfd5",
+        "name": "RP",
+        "label": "Recharge pills",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "mdi-pill-multiple",
+        "iconPosition": "right",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 460,
+        "wires": [
+            [
+                "dd56e0c96242cc33"
+            ]
+        ]
+    },
+    {
+        "id": "7e277dcfe72e3b67",
+        "type": "mqtt out",
+        "z": "be8b404ffdaac503",
+        "name": "Py/routine",
+        "topic": "Py/routine",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a1ec5b71498110d9",
+        "x": 660,
+        "y": 460,
+        "wires": []
+    }
+]

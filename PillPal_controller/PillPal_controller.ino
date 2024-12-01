@@ -5,9 +5,6 @@
 #define VRY_PIN  32 // ESP32 pin connected to VRY pin
 #define button 15 // Pin para el boton del joystick
 
-bool send;
-
-
 int xValue = 0; // To store value of the X axis
 int yValue = 0; // To store value of the Y axis
 
@@ -21,7 +18,7 @@ const int deadbandMax = 1950;
 // Configuración Wi-Fi y MQTT
 const char* ssid = "Hw";
 const char* password = "hbsv0393";
-const char* mqtt_server = "192.168.43.104";
+const char* mqtt_server = "192.168.43.55";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -61,10 +58,11 @@ void setup() {
   Serial.begin(115200);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
+  pinMode(button, INPUT_PULLUP);
 }
 
 void loop() {
-  
+  // If que solo se ejecute si se activa el boton en el pin 15, validar constantemente sis se vuelve a presionar el boton
     if (!client.connected()) {
       reconnect();
     }
@@ -126,5 +124,10 @@ void loop() {
     Serial.print(", Right Motor = ");
     Serial.println(motorSpeedRight);
 
+    if (digitalRead(button)== LOW){
+      client.publish("ESP/confirm", "REOK");
+      Serial.println("REOK");
+    }
+    
     delay(500);
   }

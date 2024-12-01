@@ -29,10 +29,10 @@ client.loop_start()
 try:
     while True:
         # Leer texto desde la consola
-        mensaje = input("Ingresa un mensaje para publicar en 'ESP/confirm': ")
+        mensaje = input("Ingresa un mensaje para publicar en 'Py/routine': ")
 
         # Publicar el mensaje en el tópico 'laptop/josue'
-        client.publish("ESP/confirm", mensaje)
+        client.publish("Py/routine", mensaje)
 
 except KeyboardInterrupt:
     print("Desconectando...")

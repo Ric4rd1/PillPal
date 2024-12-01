@@ -88,7 +88,7 @@ class messageQueue:
         self.sync_event.wait()
         print(f"Temperature: {self.temperature}, Humidity: {self.humidity}")
         # Envía datos de regreso a Node RED
-        self.mqttClient.publish("Py/confirm", f"TH{self.temperature}C,{self.humidity}%")
+        self.mqttClient.publish("Py/confirm", f"TH{self.temperature},{self.humidity}")
                 
 
     def process_return_data(self):

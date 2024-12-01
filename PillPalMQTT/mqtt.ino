@@ -24,6 +24,11 @@ bool isMoving = false;             // Flag for ongoing movement
 String instruction = "";
 int value = -1;
 
+int motorLeft;
+int motorRight;
+
+int valueAux;
+
 // Callback functions for MQTT messages
 void callback(char* topic, byte* payload, unsigned int length) {
     Serial.print("Message recieved on topic: ");
@@ -40,7 +45,18 @@ void callback(char* topic, byte* payload, unsigned int length) {
     
 
     String instructionAux = message.substring(0,2);
-    int valueAux = message.substring(2).toInt();
+    valueAux = message.substring(2).toInt();
+    
+    if(instructionAux == "JS"){
+      int comaIndex = message.indexOf(',');
+        if (comaIndex != -1) {
+          motorLeft = message.substring(2, comaIndex).toInt(); // "123"
+          motorRight = message.substring(comaIndex + 1).toInt(); // "456"
+    
+        } else{
+          valueAux = message.substring(2).toInt();
+      }
+    }
 
     Serial.print("Instruction:#");
     Serial.print(instructionAux);
@@ -61,6 +77,7 @@ void reconnect() {
         if (mqttClient.connect("ESP32Client")) {
             Serial.println("Connected");
             mqttClient.subscribe("Py/routine");
+            mqttClient.subscribe("ESP/joy");
         } else {
             Serial.print("Failed, rc=");
             Serial.print(mqttClient.state());
@@ -104,6 +121,10 @@ void loopMqtt() {
         instruction  = currentCommand.instructionCmd;
         value = currentCommand.valueCmd;
 
+        if(currentCommand.instructionCmd == "JS"){
+          setMotorSpeeds(motorLeft, motorRight);
+        }
+
         if (currentCommand.instructionCmd == "MF") {
             resetCounts();
             isMoving = true;  // Set moving flag
@@ -124,13 +145,13 @@ void loopMqtt() {
 
         if(currentCommand.instructionCmd == "TP"){
           String t = String(readTemp());
-          t = t + " °C";
+          t = "TP" + t;
           mqttClient.publish("ESP/confirm", t.c_str());
         }
 
         if(currentCommand.instructionCmd == "HP"){
           String h = String(readHumid());
-          h = h + " %";
+          h = "HP" + h;
           mqttClient.publish("ESP/confirm", h.c_str());
         }
         

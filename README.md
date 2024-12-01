@@ -1,6 +1,8 @@
 # PillPal 🩺💊  
 Welcome to PillPal! A home medical assistant designed to improve medication management. PillPal combines innovative hardware and software to ensure users take their medications on time and safely.  
 
+![image](https://github.com/user-attachments/assets/b46bfd21-e9cd-4db9-9f79-7273694f7fb7)
+
 ## 🚀 Project Description  
 PillPal is a medication dispensing robot that leverages MQTT and data processing technologies to:  
 - Dispense medications according to prescriptions.  
@@ -32,5 +34,9 @@ The project is divided into three main components, each with specific responsibi
   - `paho-mqtt` for MQTT communication.  
   - `queue` for task management.  
   - `pandas` for DataFrame handling.  
-  - `qrcode` for generating QR codes with medication information.  
+  - `qrcode` for generating QR codes with medication information.
+
+## 📚 Documentation and Videos 📺
+- https://docs.google.com/document/d/1DWNFqEQlA5sqqxtK2EukKmiPLDHDfDtE2Gj4O8byPWM/edit?usp=sharing
+- https://drive.google.com/drive/folders/1LYD4aqn_plU88AiijxxfB8_hm82p3c0Y?usp=sharing
 
